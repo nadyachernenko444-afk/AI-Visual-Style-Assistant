@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Visual Style Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>AI Visual Style Assistant</h1>
+            <p class="description">Инструмент для быстрого определения визуального направления сайта на Tilda на основе ТЗ и ЦА.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="form-group">
+                    <label for="product-tz">ТЗ на продукт</label>
+                    <textarea id="product-tz" placeholder="Например: Вебинар по запуску нейросетей для предпринимателей. Цель: собрать регистрации..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="references">Картинки-референсы (анализ стиля)</label>
+                    <input type="file" id="references" multiple accept="image/*" class="file-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="audience-desc">Категории и описания ЦА (каждая с новой строки)</label>
+                    <textarea id="audience-desc" placeholder="Например:&#10;Фрилансеры — хотят автоматизировать рутину&#10;Предприниматели — ищут новые точки роста"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="keywords">Ключевые слова для ресерча</label>
+                    <input type="text" id="keywords" placeholder="Например: AI, минимализм, финтех, современный интерфейс">
+                </div>
+
+                <div class="form-group">
+                    <label for="mood">Настроение</label>
+                    <select id="mood">
+                        <option value="calm">Спокойное</option>
+                        <option value="premium">Премиальное</option>
+                        <option value="bright">Яркое</option>
+                        <option value="tech">Технологичное</option>
+                        <option value="expert">Экспертное</option>
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="primary-btn">Сгенерировать визуальное направление</button>
+            </section>
+
+            <section id="result-section" class="result-section hidden">
+                <div class="result-header">
+                    <h2>Визуальное направление</h2>
+                    <div class="result-actions">
+                        <button id="copy-btn" class="secondary-btn">Скопировать результат</button>
+                        <button id="download-btn" class="secondary-btn">Скачать TXT</button>
+                        <button id="clear-btn" class="danger-btn">Очистить</button>
+                    </div>
+                </div>
+                <div id="result-content" class="result-content">
+                    <!-- Результат будет вставлен сюда JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
